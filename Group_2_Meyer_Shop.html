@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Beauty and the Beads</title>
+		<link rel="icon" type="image/x-icon" href="https://drive.google.com/uc?export=view&id=1qMRmKd7KVnXxcWCh3Z24gQcqNUAzXQL9">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Cinzel+Decorative&family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+        <style>
+        	body {
+        		margin: 0;
+                        background-image: url(https://drive.google.com/uc?export=view&id=1U0U1HAAoSNZGnpGuy6Hpq28bQfSoVQnB);
+                        background-repeat: no-repeat; 
+                        background-attachment: fixed; 
+                        background-size: cover;
+                        background-color: #273573;
+        		font-family: Cinzel;
+        		font-weight:400;
+        	}
+
+        	.container {
+        		width: 80%
+        		margin: 0 auto;
+        		padding-left: 30px;
+        	}
+
+        	header {
+        		background-color: #273573;
+        	}
+
+        	header::after {
+        		content: '';
+        		display: table;
+        		clear: both;
+        	}
+
+        	.logo {
+        		float: left;
+        		padding: 10px 0;
+        	}
+
+        	nav {
+        		float: right;
+        	}
+
+        	nav ul {
+        		margin: 0;
+        		padding: 0;
+        		list-style: none;
+        	}
+
+        	nav li {
+        		display: inline-block;
+        		margin-left: 25px;
+        		margin-right: 25px;
+        		padding-top: 30px;
+                font-family: Cinzel;
+
+        		position: relative;
+        	}
+
+        	nav a {
+        		color: white;
+        		text-decoration: none;
+        		text-transform: uppercase;
+        		font-size: 17px;
+        	}
+
+        	nav.a hover {
+        		color: black;
+        	}
+
+        	nav a::before {
+        		content: '';
+        		display: block;
+        		height: 2px;
+        		width: 100%;
+        		background-color: #F4A928;
+
+        		position: absolute;
+        		top: 60px;
+        		width: 0%;
+
+        		transition: all ease-in-out 250ms
+        	}
+
+        	nav a:hover::before {
+        		width: 100%;
+        	}
+
+            .products table {
+                margin-left: 13%;
+                margin-top: 1px;
+                border: 0;
+            }
+
+            .products td {
+                padding: 5px 10px;
+            }
+
+            .rotated {
+                font-family: Cinzel Decorative;
+                font-size: 100px;
+                color: #FFDF3B;
+                text-align: center;
+                letter-spacing: 2px;
+                writing-mode: tb-rl;
+                transform: rotate(-180deg);
+            }
+
+            .image {
+                position: relative;
+                width: 210px;
+            }
+
+            .image__img {
+                display: block;
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            .image__overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6);
+                color: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                opacity: 0;
+                transition: opacity 0.25s;
+            }
+
+            .image__overlay > * {
+                transform: translateY(20px);
+                transition: transform 0.25s;
+            }
+
+            .image__overlay:hover {
+                opacity: 1;
+            }
+
+            .image__overlay:hover > * {
+                transform: translateY(0);
+            }
+
+            .image__title {
+                font-family: Cinzel Decorative;
+                font-size: 1.35em;
+                font-weight: bold;
+                text-align: center;
+                padding: 0 5px;
+                line-height: 20px;
+                margin-top: 20px;
+            }
+
+            .image__description {
+                font-family: Josefin Sans;
+                font-size: 0.85em;
+                margin-top: 0.35em;
+                text-align: center;
+                padding: 0 8px;
+            }
+        </style>
+	</head>
+
+	<body>
+
+		<header>
+			<div class="container">
+				<img src="https://drive.google.com/uc?export=view&id=1CBzY6RCVXu5rS9LAtHAD7LcA1dyPyHbV" alt="logo" class="logo" height="60">
+                <nav>
+                    <ul>
+                        <li><a href="Group_2_Meyer_Home.html">HOME</a></li>
+                        <li><a href="Group_2_Meyer_About.html">ABOUT</a></li>
+                        <li><a href="Group_2_Meyer_Shop.html">SHOP</a></li>
+                        <li><a href="Group_2_Meyer_Entrep.html">Entrepreneurship</a></li>
+                        <li><a href="Group_2_Meyer_EAPP.html">EAPP</a></li>
+                        <li><a href="Group_2_Meyer_Biology.html">Biology</a></li>
+                        <li><a href="Group_2_Meyer_CPAR.html">CPAR</a></li>
+                    </ul>
+                </nav>
+			</div>
+		</header>
+
+        <div class="products">
+            <table>
+                <tr>
+                    <td rowspan="3" class="rotated">&nbsp;&nbsp;DeSIGNS</td>
+                    <td>
+                        <div class="image">
+                            <img src="https://drive.google.com/uc?export=view&id=1jzv-dYauvruV-Dssu1jCqwK9l1rGDOFt" class="image__img">
+                            <div class="image__overlay">
+                                <div class="image__title">Pearless Pearls</div>
+                                <p class="image__description">Caught under the sea, these pearls were taken from the finest clams, shining brightly as its white, creamy appearance. Moreover, its lightweight feel makes the piece stylish and easy to wear unlike any other earring!</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="image">
+                            <img src="https://drive.google.com/uc?export=view&id=1TT1zUNVidwDO2g8GZPo59QuyECLKFSUh" class="image__img">
+                            <div class="image__overlay">
+                                <div class="image__title">Charming Candy Cuff</div>
+                                <p class="image__description">These pink marshmallow-like tube beads traced along the earrings with the scattered creamy pearls make it a charming cuff for those who are into eye-candy magic!</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="image">
+                            <img src="https://scontent.fmnl4-6.fna.fbcdn.net/v/t1.15752-9/277972772_725630775102235_7620583935217429985_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeHKpqTPSco6iByLDTYD40QgRuNOM_SRGMhG404z9JEYyD6Ho4-bXI4qhMvN3f5ECh6_mGT6ssjUogqeBEbTmI7b&_nc_ohc=5K1cotZbS6oAX-ykbQx&_nc_ht=scontent.fmnl4-6.fna&oh=03_AVLvjfkVraQFqukEbgu_FNPugKom4FfoAMoFRjqVAcDeKQ&oe=62903D72" class="image__img">
+                            <div class="image__overlay">
+                                <div class="image__title">Midnight Magic</div>
+                                <p class="image__description">There’s just something about going to a ball at midnight! The breezy blue beads encapture the midnight sky, mixed with the clear diamonds just like the stars with a hint of rose pink for the perfect magical touch!</p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="image">
+                            <img src="https://scontent.fmnl4-3.fna.fbcdn.net/v/t1.15752-9/277833782_1021164861829769_5662982091497548217_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeEf20VNkzrYQfXzh5B-LipZeJ1JraH6iDN4nUmtofqIM2Lc4WIz1KHXAN9qzpjPvL73Tp33eVKW6U1U7qY48Rn7&_nc_ohc=0XziBSkpnEoAX8md1f9&_nc_ht=scontent.fmnl4-3.fna&oh=03_AVLLB27SujCA7Vbh31GyqctLoZQE14iJeHnbauHTULfiog&oe=62907E64" class="image__img">
+                            <div class="image__overlay">
+                                <div class="image__title">Emerald of OZ</div>
+                                <p class="image__description">Following the yellow brick road leads you to the green, glorious, and gorgeous emerald City located in OZ. Mixing the colors of the yellow road, the green city, and the white pearls remind us that after our journey, there’s no place like home!</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="image">
+                            <img src="https://scontent.fmnl4-5.fna.fbcdn.net/v/t1.15752-9/277595776_374065607954269_8922824768282188900_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeFH9MvF0BzxGJpU-u6GIAGLN0Kp5HfuJno3Qqnkd-4mevA2x4mCQJaNP-ysEitNeq4x-9URuH3qVKmN6pp-kiAA&_nc_ohc=3r2lFBRYFGcAX9lz4W0&_nc_ht=scontent.fmnl4-5.fna&oh=03_AVJfMAOQUAfp7g8frG834v_KQXe800Eo16j9ePQtZ3SiYw&oe=62908CE8" class="image__img">
+                            <div class="image__overlay">
+                                <div class="image__title">Magic Carpet</div>
+                                <p class="image__description">Experience the feeling of a magic carpet ride as you fly through the sandy orange pearls to the dark blue sky. All that’s missing is a magical lamp and a genie for a whole new world extravaganza!</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="image">
+                            <img src="https://scontent.fmnl4-1.fna.fbcdn.net/v/t1.15752-9/277688382_378506683987515_8290436836184446069_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeHsBVGzvf6lwtR0IXiKYr3Tq3a3RWYaAI-rdrdFZhoAj2fEEUtb3MP5uVPixFNXUH7atTVG6DDC3x4CVqCUBDIo&_nc_ohc=-lY51mbddeEAX9_pORh&_nc_oc=AQlnigkDbOuaVraMO8YrHfocTNMlcdycakYQXACMXGRS1Ag79RewtPaLY3-wXQdcu0A&_nc_ht=scontent.fmnl4-1.fna&oh=03_AVJB0ljT0NY4Uc9Gwy4LwZt_pKJrg52AJBU6I0lCybJ74A&oe=62905155" class="image__img">
+                            <div class="image__overlay">
+                                <div class="image__title">Fairydust</div>
+                                <p class="image__description">The crystal clear beadings make a long-lasting impression of being pure, graceful, and classy all at the same time, which perfectly evokes an aura of fairy dust, guiding you to your happily ever after.</p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="image">
+                            <img src="https://drive.google.com/uc?export=view&id=18h6wWa4i_-bCAJ2Zwju3vC9FAplsXMmB" class="image__img">
+                            <div class="image__overlay">
+                                <div class="image__title">Snowdrop</div>
+                                <p class="image__description">The entwined band that holds a lone pearl bead takes one back to the snow that glows white on the mountains of Arendelle, providing a classic look with a touch of chic.</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="image">
+                            <img src="https://drive.google.com/uc?export=view&id=1RJqwchbSWDRqM7dDZoqC4llKDHBxVKAB" class="image__img">
+                            <div class="image__overlay">
+                                <div class="image__title">Enchanted Forest</div>
+                                <p class="image__description">An elegant vision of the forest, this magical circlet of translucent olive green beads holds the promise of nature, in which a soul may learn how to live, love, and grow alongside each other. With this mystic ring, bloom and heal with grace—and who knows when you’ll meet the seven dwarves?</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="image">
+                            <img src="https://scontent.fmnl25-3.fna.fbcdn.net/v/t1.15752-9/278170135_1331300250724787_7653419872050697025_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeHPGKotfE-p1qJbeT_6FF6w8gaO7Dbo4ejyBo7sNujh6HOA5veh9xsz6xvQZ4hH0HgqIIVpKTvVZaOnoO1k-zXA&_nc_ohc=nRCC7MCyb1MAX-HYgnX&tn=3z67502yh0c5OaxB&_nc_ht=scontent.fmnl25-3.fna&oh=03_AVKo65JMEz6_PFGmQisu0ibSYAohYFFIxWmESxedgCc4GA&oe=628F6C78" class="image__img">
+                            <div class="image__overlay">
+                                <div class="image__title">Belle Fleur Jaune</div>
+                                <p class="image__description">Surrounded by the bright blue beads and the creamy white pearls, the yellow rose in the center stands out, making you the creme de la creme, the belle of the ball.</p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="products2">
+            <table>
+                
+            </table>
+        </div>
+
+	</body>
+</html>

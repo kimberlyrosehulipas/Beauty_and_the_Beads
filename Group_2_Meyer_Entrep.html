@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Beauty and the Beads</title>
+		<link rel="icon" type="image/x-icon" href="https://drive.google.com/uc?export=view&id=1qMRmKd7KVnXxcWCh3Z24gQcqNUAzXQL9">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+        <style>
+        	body {
+        		margin: 0;
+                        background-image: url(https://drive.google.com/uc?export=view&id=1ekD-Tmi72b3MZcwjlYcZGfbj12G6HHfx);
+                        background-repeat: no-repeat; 
+                        background-attachment: fixed; 
+                        background-size: cover;
+                        background-position: center top;
+                        background-color: #273573;
+        		font-family: Cinzel;
+        		font-weight:400;
+        	}
+
+        	.container {
+        		width: 80%
+        		margin: 0 auto;
+        		padding-left: 30px;
+        	}
+
+        	header {
+        		background-color: #273573;
+        	}
+
+        	header::after {
+        		content: '';
+        		display: table;
+        		clear: both;
+        	}
+
+        	.logo {
+        		float: left;
+        		padding: 10px 0;
+        	}
+
+        	nav {
+        		float: right;
+        	}
+
+        	nav ul {
+        		margin: 0;
+        		padding: 0;
+        		list-style: none;
+        	}
+
+        	nav li {
+        		display: inline-block;
+        		margin-left: 25px;
+        		margin-right: 25px;
+        		padding-top: 30px;
+                font-family: Cinzel;
+
+        		position: relative;
+        	}
+
+        	nav a {
+        		color: white;
+        		text-decoration: none;
+        		text-transform: uppercase;
+        		font-size: 17px;
+        	}
+
+        	nav.a hover {
+        		color: black;
+        	}
+
+        	nav a::before {
+        		content: '';
+        		display: block;
+        		height: 2px;
+        		width: 100%;
+        		background-color: #F4A928;
+
+        		position: absolute;
+        		top: 60px;
+        		width: 0%;
+
+        		transition: all ease-in-out 250ms
+        	}
+
+        	nav a:hover::before {
+        		width: 100%;
+        	}
+
+            .accordion {
+                max-width: 80%;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                border-radius: 5px;
+                overflow: hidden;
+                font-family: Josefin Sans;
+                background: #F4A928;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .accordion__label {
+                padding: 14px 20px;
+            }
+
+            .accordion__label {
+                display: block;
+                color: #273573;
+                cursor: pointer;
+                font-weight: 500;
+                position: relative;
+                transition: background 0.1s;
+                text-transform: uppercase;
+                text-align: center;
+                letter-spacing: 0.5px;
+            }
+
+            .accordion__label:hover {
+                background: rgba(0, 0, 0, 0.1);
+            }
+
+            .accordion__label::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%);
+                right: 20px;
+                width: 12px;
+                height: 6px;
+                background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
+                background-size: contain;
+                transition: transform 0.4s;
+            }
+
+            .accordion__content {
+                background: rgba(250, 250, 250, 0.5);
+                line-height: 1.6;
+                font-size: 15px;
+                display: none;
+                color: black;
+                padding: 14px 35px;
+            }
+
+            .center {
+                text-align: center;
+            }
+
+            .justify {
+                text-align: justify;
+            }
+
+            .under_line {
+                text-decoration: underline;
+                text-underline-position: under;
+            }
+
+            .indent {
+                text-indent: 50px;
+            }
+
+            .accordion__input {
+                display: none;
+            }
+
+            .accordion__input:checked ~ .accordion__content {
+                display: block;
+            }
+
+            .accordion__input:checked ~ .accordion__label::after {
+                transform: translate(-50%, -50%) rotate(0.5turn);
+            }
+
+            .heading h2, .heading p {
+                text-align: center;
+                line-height: 10px;
+                color: white;
+            }
+
+            .heading h2 {
+                font-family: Josefin Sans;
+                font-weight: bold;
+                letter-spacing: 3px;
+            }
+
+            .heading p {
+                font-weight: lighter;
+            }
+
+            .section{
+                position: relative;
+                width: 100%;
+                display: block;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -ms-flex-pack: center;
+                justify-content: center;
+            }
+
+            .full-height{
+                min-height: 5vh;
+            }
+
+            [type="checkbox"]:checked,
+            [type="checkbox"]:not(:checked){
+                position: absolute;
+                left: -9999px;
+            }
+            
+            .modal-btn:checked + label,
+            .modal-btn:not(:checked) + label{
+                position: relative;
+                height: 155px;
+                width: 155px;
+                transition: all 200ms linear;
+                border-radius: 5px;
+                display: -webkit-inline-flex;
+                display: -ms-inline-flexbox;
+                display: inline-flex;
+                -webkit-align-items: center;
+                -moz-align-items: center;
+                -ms-align-items: center;
+                align-items: center;
+                -webkit-justify-content: center;
+                -moz-justify-content: center;
+                -ms-justify-content: center;
+                justify-content: center;
+                -ms-flex-pack: center;
+                text-align: center;
+                    -ms-flex-item-align: center;
+                    align-self: center;
+                border: none;
+                cursor: pointer;
+                background-color: #102770;
+                color: #ffeba7;
+                box-shadow: 0 12px 35px 0 rgba(0, 0, 0, 0.4);
+            }
+                
+            .modal-btn:not(:checked) + label:hover{
+                background-color: #F4A928;
+            }
+
+            .modal-btn:checked + label:after,
+            .modal-btn:not(:checked) + label:after{
+                position: fixed;
+                top: 30px;
+                right: 30px;
+                z-index: 110;
+                width: 40px;
+                border-radius: 3px;
+                height: 30px;
+                text-align: center;
+                line-height: 30px;
+                font-size: 18px;
+                background-color: #ffeba7;
+                color: #102770;
+                font-family: 'Cinzel';
+                content: 'X'; 
+                box-shadow: 0 12px 25px 0 rgba(0, 0, 0, 0.4);
+                transition: all 200ms linear;
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(20px);
+            }
+            
+            .modal-btn:checked + label:hover:after,
+            .modal-btn:not(:checked) + label:hover:after{
+                background-color: #F4A928;
+            }
+            
+            .modal-btn:checked + label:after{
+                transition: opacity 300ms 300ms ease, transform 300ms 300ms ease, background-color 250ms linear, color 250ms linear;
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0);
+            }
+            
+            .modal{
+                position: fixed;
+                display: block;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -ms-flex-pack: center;
+                justify-content: center;
+                argin: 0 auto;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 100;
+                overflow-x: hidden;
+                background-color: rgba(0, 0, 0, 0.8);
+                pointer-events: none;
+                opacity: 0;
+                transition: opacity 250ms 700ms ease;
+            }
+
+            .modal-btn:checked ~ .modal{
+                pointer-events: auto;
+                opacity: 1;
+                transition: all 300ms ease-in-out;
+            }
+
+            .modal-wrap {
+                position: relative;
+                display: block;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+                margin: 0px;
+                border-radius: 10px;
+                overflow: hidden;
+                padding: 0px;
+                background-color: #273573;
+                    -ms-flex-item-align: center;
+                    align-self: center;
+                    box-shadow: 0 0 40px 0 rgba(250, 250, 250, 0.2);
+                opacity: 0;
+                transform: scale(0.5);
+                transition: opacity 250ms 250ms ease, transform 300ms 250ms ease;
+            }
+            
+            .modal-wrap img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+            
+            .modal-btn:checked ~ .modal .modal-wrap{
+                opacity: 1;
+                transform: scale(1);
+                transition: opacity 250ms 500ms ease, transform 350ms 500ms ease;
+            }
+
+            .modal-btn:checked {
+                filter: brightness(100%);
+                transition: all 250ms linear;
+            }
+
+            .materials table {
+                margin-left: 10%;
+                border: 0;
+                border-spacing: 0;
+                padding: 0;
+            }
+
+            .materials td {
+                width: 45%;
+                padding: 5px 15px;
+                font-family: Josefin Sans;
+                vertical-align: middle;
+                color: black;
+                border-bottom: 1px solid black;
+            }
+
+            .prototype table {
+                margin-left: auto;
+                margin-right: auto;
+                border: 0;
+                border-spacing: 20px;
+                padding: 0;
+            }
+
+            .prototype tr {
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            .prototype img {
+                height: 150px;
+                width: 150px;
+                box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+                border-radius: 5px;
+            }
+
+            .pricing-policy table, .sales-projections table, .sales-projections-total table {
+                margin-left: auto;
+                margin-right: auto;
+                border-style: solid;
+                border-width: medium;
+                border-color: #F4A928;
+                border-spacing: 0px;
+                padding: 0;
+            }
+
+            .pricing-policy td, .sales-projections td, .sales-projections-total td {
+                text-align: center;
+                padding: 2px 10px;
+                border-style: solid;
+                border-width: thin;
+                border-color: #F4A928;
+            }
+
+            .financial table {
+                margin-left: auto;
+                margin-right: auto;
+                border: 0;
+                border-spacing: 0;
+                padding: 0;
+            }
+
+            .financial tr:hover {
+                background-color: #F4A928;
+            }
+
+            .financial td {
+                padding: 5px 15px;
+            }
+
+            .line-b td {
+                border-bottom: 1px solid black;
+            }
+
+            .sales-projections-main table {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .sales-padding {
+                padding: 15px 25px;
+            }
+
+            .marketing a {
+                text-decoration: none;
+            }
+
+            .marketing a:visited {
+                color: #273573;
+            }
+
+            .marketing a:hover {
+                color: #B72C3F;
+            }
+
+            .center-image {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 5px;
+            }
+        </style>
+	</head>
+
+	<body>
+
+		<header>
+			<div class="container">
+				<img src="https://drive.google.com/uc?export=view&id=1CBzY6RCVXu5rS9LAtHAD7LcA1dyPyHbV" alt="logo" class="logo" height="60">
+                <nav>
+                    <ul>
+                        <li><a href="Group_2_Meyer_Home.html">HOME</a></li>
+                        <li><a href="Group_2_Meyer_About.html">ABOUT</a></li>
+                        <li><a href="Group_2_Meyer_Shop.html">SHOP</a></li>
+                        <li><a href="Group_2_Meyer_Entrep.html">Entrepreneurship</a></li>
+                        <li><a href="Group_2_Meyer_EAPP.html">EAPP</a></li>
+                        <li><a href="Group_2_Meyer_Biology.html">Biology</a></li>
+                        <li><a href="Group_2_Meyer_CPAR.html">CPAR</a></li>
+                    </ul>
+                </nav>
+			</div>
+		</header>
+
+        <br>
+
+        <div class="heading">
+            <h2>OUR BUSINESS PLAN</h2>
+            <p>COMPANY: &nbsp;Beauty and the Beads</p>
+        </div>
+
+        <br>
+
+        <div class="accordion">
+            <!--Executive Summary-->
+            <div>
+                <input type="checkbox" name="bp__accordion" id="section1" class="accordion__input">
+                <label for="section1" class="accordion__label"><b>I. EXECUTIVE SUMMARY</b></label>
+                <div class="accordion__content justify indent">
+                    <p>Beads have been a part of our fashion industry for a long period of time. It has been a symbolism of accessory trends usually built as small perforated spheres. In accordance with this, Beauty and the Beads is one uprising independent enterprise that aims to offer high-quality affordable accessories personally handcrafted by the company. It includes various bead shapes, sizes, and colors assembled altogether by a thread, wire or string. The enterprise categorizes itself under a type of business model called the <i>“Manufacturer Model”</i>. This model intends to create a product from raw materials. Furthermore, it can also be considered as a business to <i>consumer model</i>, this focuses to provide service or product directly to satisfy the needs and wants of the consumer.</p>
+                    <p>Subsequently, for the past few years ever since the pandemic had emerged to spread around the whole world, a huge number of people are prohibited to go out of their respective houses. Now, given that the vaccine is continuously distributed, a great adjustment of freedom is given to the society. This simply means that a lot are eager to present themselves outside of their houses with their newly improved fashion sense. This opportunity is great for small businesses related to jewelry and accessories like Beauty and the Beads so that consumers can flourish their basic outfits to a great representation of bewildering fashion sense. Additionally, Beauty and the Beads is also open to offer customizable accessories that can be personally customized by consumers themselves. They guarantee that the product is less expensive and more family-friendly that can be suitable for people ages 7 and above.  The company is also open to criticisms and suggestions that consumers have.</p>
+                    <p>Beauty and the Beads would manage their sales and marketing through the use of social networks and internet marketing. They would use numerous social media platforms like Facebook, Twitter, and Instagram for their advertisements. In accordance with that, preparation and release of social media accounts about the enterprise is also awaited. The content includes the background of the company, the members included, and of course the product itself. The form for orders will also be indicated in the company’s social media accounts.</p>
+                    <p>For the second week of April 2022, the company finished their market research to determine consumer behavior. It was successfully completed through a survey and analyzed by the company members. Moving forward, during this similar week of April, the prototype of the product was accomplished. Further release of the product and marketing will be discussed in the near time.</p>
+                </div>
+            </div>
+            <!--Management and Organization-->
+            <div>
+                <input type="checkbox" name="bp__accordion" id="section2" class="accordion__input">
+                <label for="section2" class="accordion__label"><b>II. MANAGEMENT AND ORGANIZATION</b></label>
+                <div class="accordion__content">
+                    <p class="center under_line"><b>COMPANY NAME & LOGO</b></p>
+                    <div class="section full-height">
+                        <input class="modal-btn" type="checkbox" id="modal-btn" name="modal-btn">
+                        <label for="modal-btn">
+                            <img src="https://drive.google.com/uc?export=view&id=1dHznZ1ZZNDBHN10LueM7BQWGzNAmyVLr" height="150">
+                        </label>
+                        <div class="modal">
+                            <div class="modal-wrap">
+                                <img src="https://drive.google.com/uc?export=view&id=1dHznZ1ZZNDBHN10LueM7BQWGzNAmyVLr" height="500">
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                    <p class="center under_line"><b>VISION STATEMENT</b></p>
+                    <p class="center">Beauty and the Beads envisions to inspire anyone of all ages, to exceed the limit of their imagination with their creativity skills and well thought out decisions. With the great cooperation, teamwork, and support, Beauty and the Beads will make one’s way to have an adventure in the wide somewhere filled with shining, shimmering, splendid jewelries to share with everyone.</p>
+                    <br>
+                    <p class="center under_line"><b>MISSION STATEMENT</b></p>
+                    <p class="center">Beauty and the Beads’s mission is to bring back the trend of adding beaded products to modern fashion. Fashion is an art; the business intends to build an environment that provides positive encouragement and building self-esteem through finding self-expression.</p>
+                    <br>
+                    <p class="center under_line"><b>ABOUT THE COMPANY</b></p>
+                    <p class="center">The management team of Beauty and the Beads comprises eight (8) co-owning senior year students from 12-Meyer of Pasig City Science High School. The team is responsible for the creation, advertisement, and overall management of the products, employing a partnership legal structure in which management duties, expenses, liabilities, and profits are equally divided and shared between the students. The business will be home-based and advertised online using social media platforms like Facebook as consulted by their Entrepreneurship teacher, Mrs. Beverly Rose Ramos. The purchased product will be delivered accordingly after transacting with the customer. Suppliers, delivery and logistics personnel, and other key figures are also involved in the smooth-sailing operation of Beauty and the Beads.</p>
+
+                    <img src="https://drive.google.com/uc?export=view&id=1jmMbi15ngNfId4egrgB2_lG5_qIG7dP6" width="900" class="center-image">
+
+                    <br>
+
+                </div>
+            </div>
+            <!--Product Plan-->
+            <div>
+                <input type="checkbox" name="bp__accordion" id="section3" class="accordion__input">
+                <label for="section3" class="accordion__label"><b>III. PRODUCT PLAN</b></label>
+                <div class="accordion__content">
+                    <p class="under_line"><b>Purpose of the Product</b></p>
+                        <p class="indent justify">Beauty and the Beads offers a wide variety of beads and services for customizable accessories. The said beads can vary from shapes, sizes, colors, materials, types, and such. A list of available beads and designs will be first shown to the customer to display our aesthetics. The customers will then have the freedom to either choose a predetermined design or to make customs and design their own preferred accessory.</p>
+                    <br>
+                    <p class="under_line"><b>Product’s Unique Features</b></p>
+                        <p class="indent justify">Beauty and the Beads only has one unique feature—that is its customer service. Their aim is to produce the best suited accessory for their customers; thus, they are open to suggestions and customs if the material of interest is available within the store. The company will do their utmost best to deliver the customer’s desired product with an upbeat service and quick response at an affordable price. Some of the produced prototypes are attached below.</p>
+                            <div class="prototype">
+                                <table>
+                                    <tr>
+                                        <td><img src="https://scontent.fmnl4-3.fna.fbcdn.net/v/t1.15752-9/277833782_1021164861829769_5662982091497548217_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeEf20VNkzrYQfXzh5B-LipZeJ1JraH6iDN4nUmtofqIM2Lc4WIz1KHXAN9qzpjPvL73Tp33eVKW6U1U7qY48Rn7&_nc_ohc=0XziBSkpnEoAX8md1f9&_nc_ht=scontent.fmnl4-3.fna&oh=03_AVI7-9YjwcfCJcQk-1aNTTDvJXpQ77zzkLrZ7Mv7n5tgyQ&oe=628C89E4"></td>
+                                        <td><img src="https://drive.google.com/uc?export=view&id=18h6wWa4i_-bCAJ2Zwju3vC9FAplsXMmB"></td>
+                                        <td><img src="https://scontent.fmnl4-1.fna.fbcdn.net/v/t1.15752-9/277688382_378506683987515_8290436836184446069_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeHsBVGzvf6lwtR0IXiKYr3Tq3a3RWYaAI-rdrdFZhoAj2fEEUtb3MP5uVPixFNXUH7atTVG6DDC3x4CVqCUBDIo&_nc_ohc=kKC9AojzZaIAX8Ybu8E&_nc_oc=AQmpn25ANJRaaOv7Lc0lGQrIkI3ZYqCbPcGnlhK8DFo1k-gHK-kKip6zysAu3Zv-4OQ&_nc_ht=scontent.fmnl4-1.fna&oh=03_AVJstFD-AbHV-ryOhr6eWvjBDZm_MqShb8ah6qfxQzQ5WA&oe=628C5CD5"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="https://scontent.fmnl4-5.fna.fbcdn.net/v/t1.15752-9/277595776_374065607954269_8922824768282188900_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeFH9MvF0BzxGJpU-u6GIAGLN0Kp5HfuJno3Qqnkd-4mevA2x4mCQJaNP-ysEitNeq4x-9URuH3qVKmN6pp-kiAA&_nc_ohc=KqcfSItch_wAX834dyG&_nc_ht=scontent.fmnl4-5.fna&oh=03_AVJwhWc-Ms6GdSLS42aCoZiIyQr8XlVkDyDiXSG1eJE_8w&oe=628C9868"></td>
+                                        <td><img src="https://drive.google.com/uc?export=view&id=1jzv-dYauvruV-Dssu1jCqwK9l1rGDOFt"></td>
+                                        <td><img src="https://scontent.fmnl25-1.fna.fbcdn.net/v/t1.15752-9/278170135_1331300250724787_7653419872050697025_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeHPGKotfE-p1qJbeT_6FF6w8gaO7Dbo4ejyBo7sNujh6HOA5veh9xsz6xvQZ4hH0HgqIIVpKTvVZaOnoO1k-zXA&_nc_ohc=NiM0LB2k4rAAX_6JKzY&tn=3z67502yh0c5OaxB&_nc_ht=scontent.fmnl25-1.fna&oh=03_AVL5v3kIjLG5X1y1nFRRIRPpjtjsRMy4IxnEbegaUVCAaA&oe=628B77F8"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                    <br>
+                    <p class="under_line"><b>Materials and Equipment Requirements and Sources of Supply</b></p>
+                        <p class="indent justify">Below are the material requirements and their sources:</p>
+                            <table class="materials" align="center">
+                                <tr>
+                                    <td class="center"><b>MATERIALS</b></td>
+                                    <td class="center"><b>SOURCE</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Beading Wire or Elastic Beading Cord</td>
+                                    <td>Arts & Craft Store in Pasig Palengke</td>
+                                </tr>
+                                <tr>
+                                    <td>Assorted Beads</td>
+                                    <td>Arts & Craft Store in Pasig Palengke</td>
+                                </tr>
+                                <tr>
+                                    <td>Small Beads</td>
+                                    <td>Arts & Craft Store in Pasig Palengke</td>
+                                </tr>
+                                <tr>
+                                    <td>Clasp</td>
+                                    <td>Arts & Craft Store in Pasig Palengke</td>
+                                </tr>
+                                <tr>
+                                    <td>Crimp Beads</td>
+                                    <td>Arts & Craft Store in Pasig Palengke</td>
+                                </tr>
+                                <tr>
+                                    <td>Clear Beading Thread</td>
+                                    <td>Sewing Specialty Store in Pasig Palengke</td>
+                                </tr>
+                                <tr>
+                                    <td>Jewelry Wire</td>
+                                    <td>Sewing Specialty Store in Pasig Palengke</td>
+                                </tr>
+                                <tr>
+                                    <td>Needle and Thread</td>
+                                    <td>Sewing Specialty Store in Pasig Palengke</td>
+                                </tr>
+                                <tr>
+                                    <td>Ear Wires (Hooks or Lever Back Earrings)</td>
+                                    <td>Accessory Store in Pasig Palengke</td>
+                                </tr>
+                                <tr>
+                                    <td>Beading Chain</td>
+                                    <td>Accessory Store in Pasig Palengke</td>
+                                </tr>
+                            </table>
+                    <br>
+                    <p class="under_line"><b>Production Process and Controls</b></p>
+                        <p class="indent justify">Below is the procedure for making the beaded accessories for Beauty and the Beads:</p>
+                            <ol>
+                                <li>Prepare the materials.</li>
+                                    <ol type="a">
+                                        <li>Gather the different types and colors of beads, elastic cords or wires, scissors, pliers, and other necessities.</li>
+                                    </ol>
+                                <li>Plan the design.</li>
+                                    <ol type="a">
+                                        <li>The design may be personalized as instructed by the customer or chosen from the sample products.</li>
+                                        <li>The arrangement of beads will be evaluated and laid together to create a pattern and visualize the finished product before putting in the cord or wire.</li>
+                                    </ol>
+                                <li>Cut the cord or wire to length.</li>
+                                    <ol type="a">
+                                        <li>Scissors are to be used for elastic cords while pliers are for wires that cannot be cut by scissors otherwise.</li>
+                                    </ol>
+                                <li>String the beads onto the cord or wire.</li>
+                                    <ol type="a">
+                                        <li>Hold one end of the cord in one hand and use the other to place the beads.</li>
+                                        <li>If the holes of the beads are not large enough, a needle may be utilized.</li>
+                                        <li>Keep adding the beads until it is enough and occasionally check if it is too tight or too loose.</li>
+                                        <li>Wires may also be shaped using pliers for appropriate accessories such as earrings.</li>
+                                    </ol>
+                                <li>Secure the beading cord or wire.</li>
+                                    <ol type="a">
+                                        <li>For normal beaded accessories, knot the ends of the cord or wire together.</li>
+                                        <li>Secure the knot with a small amount of glue.</li>
+                                        <li>Hide the knot inside one of the beads or by using a crimp cover.</li>
+                                        <li>For earrings or similar, secure the wire with a hook or pin.</li>
+                                    </ol>
+                                <li>Double-check the finished beaded product.</li>
+                                    <ol type="a">
+                                        <li>Check whether the design and arrangement of beads are correct and if there are no errors.</li>
+                                    </ol>
+                                <li>Fix the product into the package accordingly.</li>
+                            </ol>
+                        <p class="indent justify">The accessory-making quality control will be ensured in each step of the production process, from securing the good condition of each bead to the overall quality of the beaded products such as bracelets, earrings, and necklaces. The accessories will be handmade and meticulously crafted by each member of the group. As such, the beads will be inspected to ensure that the following have the proper color, size, and type for each accessory, without damage. The quality of the cord and wire is also important as it holds the beads together and thus, makes or breaks the accessory. Therefore, to guarantee that the beaded products will be in pristine condition, these will be assessed by the members of the group, compared with the current beaded accessories in the market, and seek feedback to further improve their quality. Apart from Shopee, personal canvassing of the beads, cords, and wires in Pasig Mega Market will be done.</p>
+                    <br>
+                    <p class="under_line"><b>Distribution Logistics</b></p>
+                        <p class="indent justify">The operation of Beauty and the Beads will be home-based, and the products will be showcased and advertised online using social media platforms such as Facebook and Twitter. The purchased product will be delivered accordingly after transacting with the customer using their preferred mode of payment. Suppliers, delivery and logistics personnel, and other key figures are also involved in the smooth-sailing operation of Beauty and the Beads.</p>
+                    <br>
+                    <p class="under_line"><b>Regulatory and Other Compliance Issues</b></p>
+                        <p class="indent justify">The Beauty and the Beads management team, comprising eight (8) grade 12 students from section Meyer, is responsible for the creation, advertisement, and overall management of the products, employing a partnership legal structure in which management duties, expenses, liabilities, and profits are equally divided and shared between the students. The business will not be registered officially and will only be opened online in fulfillment of their Entrepreneurship course.</p>
+                </div>
+            </div>
+            <!--Market Plan-->
+            <div>
+                <input type="checkbox" name="bp__accordion" id="section4" class="accordion__input">
+                <label for="section4" class="accordion__label"><b>IV. MARKET PLAN</b></label>
+                <div class="accordion__content">
+                    <p class="under_line"><b>Marketing Analysis</b></p>
+                        <p class="indent justify">According to the latest report on the global bead products market for the period 2018–2030 (wherein 2023 to 2030 is the forecast period and 2022 is the base year), the salutary benefits offered by beads coupled with advent of digital platforms for the trade of bead products is significantly driving the global bead products market.</p>
+                        <p class="indent justify">In this era of the Internet, it has become easier for traders to showcase their potential to a wide target audience with bare minimal investments and higher returns. Rise in digitalization has enabled bead products to gain higher penetration in the market and reduced the capital expenditure for supply and procurement of resources and commodities.</p>
+                        <p style="font-size: 12px">Source: <i>Shibuya Data Count (
+                            <span class="marketing">
+                                <a href="https://cutt.ly/WGxIik7">https://cutt.ly/WGxIik7</a>
+                            </span>
+                        )</i></p>
+                        <img src="https://scontent.fmnl4-6.fna.fbcdn.net/v/t1.15752-9/278535060_1258691484659113_6290731373891688172_n.png?_nc_cat=111&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeG4lqdbiQsbbQTtA0_Tf2q5XEGvIofiz3dcQa8ih-LPd5QjRr-2_xv3MYalwtfzNYk-41Zqvg_VIvhHp9ZLia-_&_nc_ohc=LAVnkM-JS9EAX8q3EXC&_nc_ht=scontent.fmnl4-6.fna&oh=03_AVJDuhDscBP3xfCUK2uKR59vOySL9lS7jnXL-5i-Q0Yovw&oe=628DBC8F" width="400" class="center-image">
+                        <p class="center" style="font-size: 12px"><b>Figure 1.</b> Expected Global Bead-Based Market Flow</p>
+                    <p class="under_line"><b>Marketing Strategy</b></p>
+                        <p class="indent justify">Social media is a virtual space that has grown and evolved to its full efficiency, where social networking is not only the sole basis of its usage but can also be used to promote businesses and their respective products. Furthermore, it reaches a wide audience in just seconds of posting ads without having to spend a single dime.</p>
+                        <p class="indent justify">With that being said, Beauty and the Beads will be making use of social media as its marketing platform. This will help the marketers build and establish a relationship with their consumers. The marketers will be able to engage with their customers on a regular basis. As student entrepreneurs, we consider this an advantage and we will make use of this chance to sell our goods more cost-effectively using the various advertising tools accessible on these social media sites. Simply being consistent and publishing relevant and relatable content for our audience can certainly help grow our social media page and business.</p>
+                        <p class="indent justify">The platforms that will be used for social media marketing are Facebook, Instagram, and Twitter.</p>
+                    <br>
+                    <p class="under_line"><b>Sales Strategy</b></p>
+                        <p class="indent justify">The sales strategies that the business revolves around are affordability, durability, and customer satisfaction. Normally, cost-effective jewelry tends to wear off after some time. Beauty and the Beads will make sure that their products are less likely to break, shatter, or bend than its rivals in the market. The jewelries sold are extremely long-lasting in spite of its low price point, this means that the jewelry will be able to withstand constant use. With this, customer satisfaction will be achieved.</p>
+                    <br>
+                    <p class="under_line"><b>Product Features</b></p>
+                        <p class="indent justify">The following are the product features that distinguish Beauty and the Beads from its industry rivals:</p>
+                            <ol>
+                                <li><b><i>Affordability</i></b> - the products will be set out to the market at a low cost. However, this will not affect the quality and the integrity of the product itself. This offers a sustainable fashion that consumers won’t have to break the bank for.</li>
+                                <li><b><i>Variation</i></b> - Beauty and the Beads offers products that are unique from one another. Each piece of jewelry will have its own distinction, and no piece shall look alike. This ensures that the customers will be presented with an array of products that they can choose from that fit their respective preferences.</li>
+                                <li><b><i>Customizable</i></b> - the ability of a business to customize its products establishes uniqueness as opposed to its rivals. Moreover, fashion is never included in a one-size-fits-all narrative.  With this, Beauty and the Beads shall offer customization and personalization services to its customers in order to tailor the products according to each person’s liking.</li>
+                            </ol>
+                    <br>
+                    <p class="under_line"><b>Pricing Policy</b></p>
+                        <p class="indent justify">The prices of the shining, shimmering, and splendid accessories offered by Beauty and the Beads are based on the type of materials used and customized features. Below is the pricing guide for the products:</p>
+                            <div class="pricing-policy">
+                                <table>
+                                    <tr>
+                                        <td colspan="2"><b>Beaded Accessory</b></td>
+                                        <td colspan="2"><b>Price</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2"><b>Earrings</b></td>
+                                        <td><i>Pearless Pearls</i></td>
+                                        <td>starts at ₱56.00</td>
+                                        <td>+ ₱10.00 for custom features</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i>Charming Candy Cuff</i></td>
+                                        <td>starts at ₱56.00</td>
+                                        <td>+ ₱10.00 for custom features</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2"><b>Bracelets</b></td>
+                                        <td><i>Emerald of OZ</i></td>
+                                        <td>starts at ₱63.00</td>
+                                        <td>+ ₱10.00 for custom features</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i>Magic Carpet</i></td>
+                                        <td>starts at ₱63.00</td>
+                                        <td>+ ₱10.00 for custom features</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2"><b>Rings</b></td>
+                                        <td><i>Snowdrop</i></td>
+                                        <td>starts at ₱56.00</td>
+                                        <td>+ ₱10.00 for custom features</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i>Enchanted Forest</i></td>
+                                        <td>starts at ₱56.00</td>
+                                        <td>+ ₱10.00 for custom features</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="3"><b>Necklaces</b></td>
+                                        <td><i>Midnight Magic</i></td>
+                                        <td>starts at ₱70.00</td>
+                                        <td>+ ₱10.00 for custom features</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i>Fairydust</i></td>
+                                        <td>starts at ₱70.00</td>
+                                        <td>+ ₱10.00 for custom features</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i>Belle Fleur Jaune</i></td>
+                                        <td>starts at ₱70.00</td>
+                                        <td>+ ₱10.00 for custom features</td>
+                                    </tr>
+                                </table>
+                            </div>
+                    <br>
+                    <p class="under_line"><b>Sales Projections</b></p>
+                    <div class="sales-projections-main">
+                        <table>
+                            <tr>
+                                <td class="sales-padding">
+                                    <div class="sales-projections">
+                                        <table>
+                                            <tr>
+                                                <td colspan="5"><span style="font-size: 18px"><b>Beaded Earrings Sales Projection</b></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td><b>Week 1</b></td>
+                                                <td><b>Week 2</b></td>
+                                                <td><b>Week 3</b></td>
+                                                <td><b>Total</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b><i>Units Sold</i></b></td>
+                                                <td>6 pieces</td>
+                                                <td>6 pieces</td>
+                                                <td>6 pieces</td>
+                                                <td>18 pieces</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b><i>Price per unit (PHP)</i></b></td>
+                                                <td>₱56</td>
+                                                <td>₱56</td>
+                                                <td>₱56</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b><i>Revenue (PHP)</i></b></td>
+                                                <td>₱336</td>
+                                                <td>₱336</td>
+                                                <td>₱336</td>
+                                                <td><b>₱1,008</b></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td class="sales-padding">
+                                    <div class="sales-projections">
+                                        <table>
+                                            <tr>
+                                                <td colspan="5"><span style="font-size: 18px"><b>Beaded Bracelet Sales Projection</b></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td><b>Week 1</b></td>
+                                                <td><b>Week 2</b></td>
+                                                <td><b>Week 3</b></td>
+                                                <td><b>Total</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b><i>Units Sold</i></b></td>
+                                                <td>8 pieces</td>
+                                                <td>8 pieces</td>
+                                                <td>8 pieces</td>
+                                                <td>24 pieces</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b><i>Price per unit (PHP)</i></b></td>
+                                                <td>₱63</td>
+                                                <td>₱63</td>
+                                                <td>₱63</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b><i>Revenue (PHP)</i></b></td>
+                                                <td>₱504</td>
+                                                <td>₱504</td>
+                                                <td>₱504</td>
+                                                <td><b>₱1,512</b></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sales-padding">
+                                    <div class="sales-projections">
+                                        <table>
+                                            <tr>
+                                                <td colspan="5"><span style="font-size: 18px"><b>Beaded Necklace Sales Projection</b></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td><b>Week 1</b></td>
+                                                <td><b>Week 2</b></td>
+                                                <td><b>Week 3</b></td>
+                                                <td><b>Total</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b><i>Units Sold</i></b></td>
+                                                <td>6 pieces</td>
+                                                <td>6 pieces</td>
+                                                <td>6 pieces</td>
+                                                <td>18 pieces</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b><i>Price per unit (PHP)</i></b></td>
+                                                <td>₱70</td>
+                                                <td>₱70</td>
+                                                <td>₱70</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b><i>Revenue (PHP)</i></b></td>
+                                                <td>₱420</td>
+                                                <td>₱420</td>
+                                                <td>₱420</td>
+                                                <td>₱1,260</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td class="sales-padding">
+                                    <div class="sales-projections">
+                                        <table>
+                                            <tr>
+                                                <td colspan="5"><span style="font-size: 18px"><b>Beaded Ring Sales Projection</b></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td><b>Week 1</b></td>
+                                                <td><b>Week 2</b></td>
+                                                <td><b>Week 3</b></td>
+                                                <td><b>Total</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b><i>Units Sold</i></b></td>
+                                                <td>5 pieces</td>
+                                                <td>5 pieces</td>
+                                                <td>5 pieces</td>
+                                                <td>15 pieces</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b><i>Price per unit (PHP)</i></b></td>
+                                                <td>₱56</td>
+                                                <td>₱56</td>
+                                                <td>₱56</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b><i>Revenue (PHP)</i></b></td>
+                                                <td>₱280</td>
+                                                <td>₱280</td>
+                                                <td>₱280</td>
+                                                <td>₱840</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                                    
+                        <br>
+                                    
+                    <div class="sales-projections-total">
+                        <table>
+                            <tr>
+                                <td colspan="5"><span style="font-size: 18px"><b>Three-Week Total Sales Projections With Profit</b></span></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td><b>Price per unit (PHP)</b></td>
+                                <td><b>Total units sold</b></td>
+                                <td><b>Total Revenue</b></td>
+                                <td><b>Total Profit</b></td>
+                            </tr>
+                            <tr>
+                                <td><b><i>Earrings</i></b></td>
+                                <td>₱56</td>
+                                <td>18 pieces</td>
+                                <td>₱1,008</td>
+                                <td>₱288</td>
+                            </tr>
+                            <tr>
+                                <td><b><i>Bracelet</i></b></td>
+                                <td>₱63</td>
+                                <td>24 pieces</td>
+                                <td>₱1,512</td>
+                                <td>₱432</td>
+                            </tr>
+                            <tr>
+                                <td><b><i>Necklace</i></b></td>
+                                <td>₱70</td>
+                                <td>18 pieces</td>
+                                <td>₱1,260</td>
+                                <td>₱360</td>
+                            </tr>
+                            <tr>
+                                <td><b><i>Ring</i></b></td>
+                                <td>₱56</td>
+                                <td>15 pieces</td>
+                                <td>₱840</td>
+                                <td>₱240</td>
+                            </tr>
+                            <tr>
+                                <td><b><i>TOTAL</i></b></td>
+                                <td>&nbsp;</td>
+                                <td><b>75 pieces</b></td>
+                                <td><b>₱4,620</b></td>
+                                <td><b>₱1,320</b></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <br>
+
+                </div>
+            </div>
+            <!--Financial Plan-->
+            <div>
+                <input type="checkbox" name="bp__accordion" id="section5" class="accordion__input">
+                <label for="section5" class="accordion__label"><b>V. FINANCIAL PLAN</b></label>
+                <div class="accordion__content">
+                    <p class="center under_line"><b>START-UP SUMMARY</b></p>
+                    <div class="financial">
+                        <table>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td class="center under_line"><b>1ST WEEK</b></td>
+                                <td class="center under_line"><b>2ND WEEK</b></td>
+                                <td class="center under_line"><b>3RD WEEK</b></td>
+                            </tr>
+                            <tr class="line-b">
+                                <td><b>Expenses</b></td>
+                                <td class="center"><b>Cost per piece</b></td>
+                                <td class="center"><b>25 accessories</b></td>
+                                <td class="center"><b>60 accessories</b></td>
+                                <td class="center"><b>75 accessories</b></td>
+                            </tr>
+                            <tr class="line-b">
+                                <td>Beading Wire <i>(30 items/pc)</i></td>
+                                <td class="center">35</td>
+                                <td class="center">29.25</td>
+                                <td class="center">58.5</td>
+                                <td class="center">87.75</td>
+                            </tr>
+                            <tr class="line-b">
+                                <td>Assorted Beads <i>(50 grams/pack)</td>
+                                <td class="center">20</td>
+                                <td class="center">75</td>
+                                <td class="center">150</td>
+                                <td class="center">225</td>
+                            </tr>
+                            <tr class="line-b">
+                                <td>Small Beads <i>(50 grams/pack)</i></td>
+                                <td class="center">20</td>
+                                <td class="center">125</td>
+                                <td class="center">250</td>
+                                <td class="center">375</td>
+                            </tr>
+                            <tr class="line-b">
+                                <td>Givre Beads <i>(10 bracelets @ Php7/bracelet)</i></td>
+                                <td class="center">70</td>
+                                <td class="center">87.5</td>
+                                <td class="center">175</td>
+                                <td class="center">262.5</td>
+                            </tr>
+                            <tr class="line-b">
+                                <td>Alphabet Beads <i>(30 pc/pack)</i></td>
+                                <td class="center">20</td>
+                                <td class="center">75</td>
+                                <td class="center">150</td>
+                                <td class="center">225</td>
+                            </tr>
+                            <tr class="line-b">
+                                <td>Pearl Beads <i>(50 grams)</i></td>
+                                <td class="center">15</td>
+                                <td class="center">56.25</td>
+                                <td class="center">112.5</td>
+                                <td class="center">168.75</td>
+                            </tr>
+                            <tr class="line-b">
+                                <td>Clasp <i>(20 pcs)</i></td>
+                                <td class="center">25</td>
+                                <td class="center">62.5</td>
+                                <td class="center">125</td>
+                                <td class="center">100</td>
+                            </tr>
+                            <tr class="line-b">
+                                <td>Crimp Beads <i>(20 pcs)</i></td>
+                                <td class="center">20</td>
+                                <td class="center">50</td>
+                                <td class="center">100</td>
+                                <td class="center">150</td>
+                            </tr>
+                            <tr class="line-b">
+                                <td>Clear Beading Thread <i>(20 items/pc)</i></td>
+                                <td class="center">40</td>
+                                <td class="center">50</td>
+                                <td class="center">100</td>
+                                <td class="center">150</td>
+                            </tr>
+                            <tr class="line-b">
+                                <td>Ear Wires <i>(50 pcs)</i></td>
+                                <td class="center">50</td>
+                                <td class="center">25</td>
+                                <td class="center">50</td>
+                                <td class="center">75</td>
+                            </tr>
+                            <tr class="line-b">
+                                <td>Card Paper <i>(50 pcs)</i></td>
+                                <td class="center">98</td>
+                                <td class="center">49</td>
+                                <td class="center">98</td>
+                                <td class="center">147</td>
+                            </tr>
+                            <tr class="line-b">
+                                <td>Kraft Paper <i>(30cm x 30cm/roll)</i></td>
+                                <td class="center">135</td>
+                                <td class="center">33.75</td>
+                                <td class="center">67.5</td>
+                                <td class="center">101.25</td>
+                            </tr>
+                            <tr class="line-b">
+                                <td>Bubble Wrap <i>(1yd/5 items)</i></td>
+                                <td class="center">8</td>
+                                <td class="center">40</td>
+                                <td class="center">80</td>
+                                <td class="center">120</td>
+                            </tr>
+                            <tr class="line-b">
+                                <td>Pouch for Courier <i>(50 pcs)</i></td>
+                                <td class="center">63</td>
+                                <td class="center">31.5</td>
+                                <td class="center">63</td>
+                                <td class="center">94.5</td>
+                            </tr>
+                            <tr>
+                                <td><b>TOTAL<b></td>
+                                <td>&nbsp;</td>
+                                <td class="center"><b>789.75</b></td>
+                                <td class="center"><b>1579.5</b></td>
+                                <td class="center"><b>2369.25</b></td>
+                            </tr>
+                        </table>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+	</body>
+</html>

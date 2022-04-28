@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Beauty and the Beads</title>
+		<link rel="icon" type="image/x-icon" href="https://drive.google.com/uc?export=view&id=1qMRmKd7KVnXxcWCh3Z24gQcqNUAzXQL9">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+        <style>
+        	body {
+        		margin: 0;
+        		font-weight: 400;
+                    background-image: url(https://drive.google.com/uc?export=view&id=1erfUwLz_QryAmk6B-RlqAIK-DbZrdDYN);
+                    background-repeat: no-repeat; 
+                    background-attachment: fixed; 
+                    background-size: cover;
+                    background-color: #5CA969;
+        	}
+
+        	.container {
+        		width: 80%
+        		margin: 0 auto;
+        		padding-left: 30px;
+        	}
+
+        	header {
+        		background-color: #273573;
+        	}
+
+        	header::after {
+        		content: '';
+        		display: table;
+        		clear: both;
+        	}
+
+        	.logo {
+        		float: left;
+        		padding: 10px 0;
+        	}
+
+        	nav {
+        		float: right;
+        	}
+
+        	nav ul {
+        		margin: 0;
+        		padding: 0;
+        		list-style: none;
+        	}
+
+        	nav li {
+        		display: inline-block;
+        		margin-left: 25px;
+        		margin-right: 25px;
+        		padding-top: 30px;
+                font-family: Cinzel;
+
+        		position: relative;
+        	}
+
+        	nav a {
+        		color: white;
+        		text-decoration: none;
+        		text-transform: uppercase;
+        		font-size: 17px;
+        	}
+
+        	nav.a hover {
+        		color: black;
+        	}
+
+        	nav a::before {
+        		content: '';
+        		display: block;
+        		height: 2px;
+        		width: 100%;
+        		background-color: #F4A928;
+
+        		position: absolute;
+        		top: 60px;
+        		width: 0%;
+
+        		transition: all ease-in-out 250ms
+        	}
+
+        	nav a:hover::before {
+        		width: 100%;
+        	}
+
+            .layout table, .layout2 table {
+                margin-left: auto;
+                margin-right: auto;
+                border: 0;
+                border-spacing: 5px;
+                padding: 0;
+            }
+
+            .layout tr, .layout2 tr {
+                width: 33.33%;
+            }
+
+            .layout td, .layout2 td {
+                padding: 5px;
+                vertical-align: top;
+                width: 470px;
+                line-height: 17px;
+            }
+
+            .plant table {
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                border: 0;
+                border-spacing: 1px;
+                padding: 0;
+            }
+
+            .plant td {
+                padding: 10px;
+                font-family: Josefin Sans;
+                vertical-align: middle;
+                color: white;
+            }
+
+            .name-info {
+                background-color: rgba(0, 0, 0, 0.25);
+                border-radius: 15px;
+            }
+
+            .specific-details table {
+                margin-left: auto;
+                margin-right: auto;
+                border: 0;
+                border-spacing: 0;
+                padding: 0;
+            }
+
+            .specific-details tr {
+                width:30%;
+            }
+
+            .specific-details td {
+                padding: 5px 10px;
+                font-family: Josefin Sans;
+                vertical-align: middle;
+                color: black;
+                border-bottom: 1px solid black;
+            }
+
+            .plant-picture {
+                border-radius: 5px;
+            }
+
+            .accordion {
+                max-width: 450px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                border-radius: 5px;
+                overflow: hidden;
+                font-family: Josefin Sans;
+                background: #FFBA00;
+            }
+
+            .accordion__label, .accordion__content {
+                padding: 14px 20px;
+            }
+
+            .accordion__label {
+                display: block;
+                color: #0C3B2E;
+                cursor: pointer;
+                font-weight: 500;
+                position: relative;
+                transition: background 0.1s;
+                text-transform: uppercase;
+            }
+
+            .accordion__label:hover {
+                background: rgba(0, 0, 0, 0.1);
+            }
+
+            .accordion__label::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%);
+                right: 20px;
+                width: 12px;
+                height: 6px;
+                background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
+                background-size: contain;
+                transition: transform 0.4s;
+            }
+
+            .accordion__content {
+                background: rgba(250, 250, 250, 0.8);
+                line-height: 1.6;
+                font-size: 0.85em;
+                display: none;
+                color: black;
+            }
+
+            .accordion__input {
+                display: none;
+            }
+
+            .accordion__input:checked ~ .accordion__content {
+                display: block;
+            }
+
+            .accordion__input:checked ~ .accordion__label::after {
+                transform: translate(-50%, -50%) rotate(0.5turn);
+            }
+
+            .taxonomic-key a {
+                text-decoration: none;
+            }
+
+            .taxonomic-key a:visited {
+                color: #273573;
+            }
+
+            .taxonomic-key a:hover {
+                color: #B72C3F;
+            }
+
+            .comparison table {
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+                border: 0;
+                border-spacing: 10px;
+                padding: 0;
+                background-color: #FFBA00;
+                border-radius: 15px
+            }
+
+            .comparison td {
+                text-align: center;
+                padding: 10px;
+                background-color: rgba(250, 250, 250, 0.7);
+                width: 10%;
+                border-radius: 15px;
+                font-family: Josefin Sans;
+                font-size: 15px;
+                color: #0C3B2E;
+            }
+
+            .center {
+                text-align: center;
+            }
+
+            .under_line {
+                text-decoration: underline;
+                text-underline-position: under;
+            }
+
+            .title {
+                font-family: Cinzel;
+                color: #0C3B2E;
+                font-size: 25px;
+            }
+
+            .cladogram img {
+                border-radius: 20px;
+            }
+        </style>
+	</head>
+
+	<body>
+
+		<header>
+			<div class="container">
+				<img src="https://drive.google.com/uc?export=view&id=1CBzY6RCVXu5rS9LAtHAD7LcA1dyPyHbV" alt="logo" class="logo" height="60">
+				<nav>
+					<ul>
+						<li><a href="Group_2_Meyer_Home.html">HOME</a></li>
+                        <li><a href="Group_2_Meyer_About.html">ABOUT</a></li>
+                        <li><a href="Group_2_Meyer_Shop.html">SHOP</a></li>
+                        <li><a href="Group_2_Meyer_Entrep.html">Entrepreneurship</a></li>
+                        <li><a href="Group_2_Meyer_EAPP.html">EAPP</a></li>
+                        <li><a href="Group_2_Meyer_Biology.html">Biology</a></li>
+                        <li><a href="Group_2_Meyer_CPAR.html">CPAR</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+        <br>
+
+        <p class="center under_line title"><b>PLANT SYSTEMATICS</b></p>
+
+            <div class="layout">
+                <table>
+                    <tr>
+
+                        <td>
+                            <div class="plant">
+                                <table>
+                                    <tr>
+                                        <td colspan="2"><img src="https://scontent.fcrk4-1.fna.fbcdn.net/v/t1.15752-9/278410017_3222350761421389_1707697886957365265_n.png?_nc_cat=108&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeHrSHgrwY6JjytcItHegeD9jpzzpJDZLgeOnPOkkNkuB4ESWUsHQnJxaA_2doRcNMJuLkK89eK88BOOw-eTBl9J&_nc_ohc=EG-mFLmamMYAX9kZXqo&_nc_ht=scontent.fcrk4-1.fna&oh=03_AVIM0bLBMWXZCvMagz__q4M9EotMzogJNphv7gWExoMapA&oe=628722D2" width="140" class="plant-picture"></td>
+                                        <td class="name-info">
+                                                <b>Common name:</b> Fern<br>
+                                                <b>Scientific name:</b> <i>Pteridophyte</i><br>
+                                                <br>
+                                                <b>Kingdom:</b> Plantae<br>
+                                                <b>Phylum:</b> Pteridophyta<br>
+                                                <b>Class:</b> Polypodiopsida<br>
+                                                <b>Order:</b> Polypodiales<br>
+                                                <b>Family:</b> Aspleniaceae<br>
+                                                <b>Genus:</b> <i>Asplenium</i><br>
+                                                <b>Species:</b> <i>bulbiferum</i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <div class="accordion">
+                                                <div>
+                                                    <input type="checkbox" name="more-info_accordion" id="section1-1" class="accordion__input">
+                                                    <label for="section1-1" class="accordion__label"><b>TAXONOMIC KEY</b></label>
+                                                    <div class="accordion__content">
+                                                        <p><b>Key A5 – small ‘fern-like’ pteridophytes, terrestrial, growing in soil, not associated with rock outcrops</b></p>
+                                                        <p>Sori elongate; leaf blades somewhat dimorphic, the fertile larger and erect, the sterile smaller and prostrate, the larger leaf blades 2-4 (-6.5) cm wide <b>[<i>Asplenium</i>] ASPLENIACEAE</b></p>
+                                                        <p style="font-size: 12px">Source: <i>
+                                                            <span class="taxonomic-key">
+                                                                <a href="http://www.herbarium.unc.edu/Big%20Key%20F.pdf">http://www.herbarium.unc.edu/Big%20Key%20F.pdf</a>
+                                                            </span>
+                                                        </i></p>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input type="checkbox" name="more-info_accordion" id="section1-2" class="accordion__input">
+                                                    <label for="section1-2" class="accordion__label"><b>DESCRIPTION</b></label>
+                                                    <div class="accordion__content">
+                                                        <p>Ferns, like all other plants except true mosses and lichens, are vascular plants, which means they have internal tubes for transporting fluids. Ferns, on the other hand, reproduce through spores rather than seeds. As a result, they prefer moist environments and are unlikely to be found in dry, arid climates. Ferns are distinguished from other low-growing species by their pinnate (divided into numerous branches on opposite sides of a common axis) leaves and simple, narrow stems.</p>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input type="checkbox" name="more-info_accordion" id="section1-3" class="accordion__input">
+                                                    <label for="section1-3" class="accordion__label"><b>SPECIFIC DETAILS</b></label>
+                                                    <div class="accordion__content">
+                                                        <div class="specific-details">
+                                                            <table>
+                                                                <tr>
+                                                                    <td><b>Leaf Size</b></td>
+                                                                    <td>2-6 cm</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Color</b></td>
+                                                                    <td>Green</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Complexity</b></td>
+                                                                    <td>Complex</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf or Leaflet Lobing</b></td>
+                                                                    <td>Unlobed</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Arrangement</b></td>
+                                                                    <td>Opposite</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Venation</b></td>
+                                                                    <td>Pinnate</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Shape</b></td>
+                                                                    <td>Fan-shaped</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Type of Stem</b></td>
+                                                                    <td>Rhizome</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Reproductive Structure</b></td>
+                                                                    <td>Spores</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Perianth</b></td>
+                                                                    <td>N/A</td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="plant">
+                                <table>
+                                    <tr>
+                                        <td colspan="2"><img src="https://scontent.fcrk4-1.fna.fbcdn.net/v/t1.15752-9/278656853_1029003774394655_6246416620453595570_n.png?_nc_cat=110&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeHAStToozuu5zeMNi0eX5jAjV6-qRYGd8ONXr6pFgZ3w6lNIbG-8z5OvywGP-4gvO1U0R-tgPMRY0R9WYu_Khd1&_nc_ohc=ytF5rqVvK1MAX90oKqV&_nc_ht=scontent.fcrk4-1.fna&oh=03_AVKqMRrxUw0eox_RUPw4g1bDf7LNnxiFc2HqZp1N1pBUYw&oe=62841CF8" width="140" class="plant-picture"></td>
+                                        <td class="name-info">
+                                            <b>Common name:</b> Coleus<br>
+                                            <b>Scientific name:</b> <i>Coleus scutellarioides</i><br>
+                                            <br>
+                                            <b>Kingdom:</b> Plantae<br>
+                                            <b>Phylum:</b> Tracheophyta<br>
+                                            <b>Class:</b> Magnoliopsida<br>
+                                            <b>Order:</b> Lamiales<br>
+                                            <b>Family:</b> Lamiaceae<br>
+                                            <b>Genus:</b> <i>Coleus</i><br>
+                                            <b>Species:</b> <i>C. scutellarioides</i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <div class="accordion">
+                                                <div>
+                                                    <input type="checkbox" name="more-info_accordion" id="section2-1" class="accordion__input">
+                                                    <label for="section2-1" class="accordion__label"><b>TAXONOMIC KEY</b></label>
+                                                    <div class="accordion__content">
+                                                        <p><b>Key J2 – woody angiosperms with opposite, simple leaves with toothed margins</b></p>
+                                                        <p>Inflorescence an axillary cyme <b>[<i>Callicarpa</i>] LAMIACEAE</b></p>
+                                                        <p style="font-size: 12px">Source: <i>
+                                                            <span class="taxonomic-key">
+                                                                <a href="http://www.herbarium.unc.edu/Big%20Key%20F.pdf">http://www.herbarium.unc.edu/Big%20Key%20F.pdf</a>
+                                                            </span>
+                                                        </i></p>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input type="checkbox" name="more-info_accordion" id="section2-2" class="accordion__input">
+                                                    <label for="section2-2" class="accordion__label"><b>DESCRIPTION</b></label>
+                                                    <div class="accordion__content">
+                                                        <p>Coleus plants are prized for their vibrant foliage, which can be green, yellow, pink, red, rust, or maroon. This popular summer annual plant's new introductions have been chosen for their increased sun and heat tolerance. Coleus foliage's brilliant and widely varied colors make it natural for use as a summer bedding plant and as a color accent. Coleus thrives in containers, brightening shady areas, patios, porches, and garden terraces.</p>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input type="checkbox" name="more-info_accordion" id="section2-3" class="accordion__input">
+                                                    <label for="section2-3" class="accordion__label"><b>SPECIFIC DETAILS</b></label>
+                                                    <div class="accordion__content">
+                                                        <div class="specific-details">
+                                                            <table>
+                                                                <tr>
+                                                                    <td><b>Leaf Size</b></td>
+                                                                    <td>2-15 cm</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Color</b></td>
+                                                                    <td>Green with red margins</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Complexity</b></td>
+                                                                    <td>Simple</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf or Leaflet Lobing</b></td>
+                                                                    <td>Unlobed</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Arrangement</b></td>
+                                                                    <td>Opposite</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Venation</b></td>
+                                                                    <td>Pinnate</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Shape</b></td>
+                                                                    <td>Ovate</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Type of Stem</b></td>
+                                                                    <td>Square stem</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Reproductive Structure</b></td>
+                                                                    <td>Cuttings and Seeds</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Perianth</b></td>
+                                                                    <td>N/A</td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="plant">
+                                <table>
+                                    <tr>
+                                        <td colspan="2"><img src="https://scontent.fcrk4-1.fna.fbcdn.net/v/t1.15752-9/278013085_454481633098468_4754828487331372258_n.png?_nc_cat=100&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeFvlhRiIGmfUuP5ysZHDxx1OKzsUtY5h-Q4rOxS1jmH5AVVItU_PuzWvC6h1YaijYQqNwESuO2up2yFA9ulbaNa&_nc_ohc=qYULsHx6IxwAX_Ht6uK&tn=qHiRBA-gyI_iBPr4&_nc_ht=scontent.fcrk4-1.fna&oh=03_AVJ8QQ0poKRsT3_JFOevoqAf7qCCU0CNOAt_L7IeM-GPew&oe=62865E37" width="140" class="plant-picture"></td>
+                                        <td class="name-info">
+                                            <b>Common name:</b> Garden Croton<br>
+                                            <b>Scientific name:</b> <i>Codiaeum variegatum</i><br>
+                                            <br>
+                                            <b>Kingdom:</b> Plantae<br>
+                                            <b>Phylum:</b> Anthophyta<br>
+                                            <b>Class:</b> Dicotyledoneae<br>
+                                            <b>Order:</b> Euphorbiales<br>
+                                            <b>Family:</b> Euphorbiaceae<br>
+                                            <b>Genus:</b> <i>Codiaeum</i><br>
+                                            <b>Species:</b> <i>C. variegatum</i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <div class="accordion">
+                                                <div>
+                                                    <input type="checkbox" name="more-info_accordion" id="section3-1" class="accordion__input">
+                                                    <label for="section3-1" class="accordion__label"><b>TAXONOMIC KEY</b></label>
+                                                    <div class="accordion__content">
+                                                        <p><b>Key G4 – shrubs and subshrubs with alternate, simple, unlobed, entire leaves</b></p>
+                                                        <p>Petals green or absent, separate; carpels 3; fruit a 3-valved capsule <b>[<i>Croton</i>] EUPHORBIACEAE</b></p>
+                                                        <p style="font-size: 12px">Source: <i>
+                                                            <span class="taxonomic-key">
+                                                                <a href="http://www.herbarium.unc.edu/Big%20Key%20F.pdf">http://www.herbarium.unc.edu/Big%20Key%20F.pdf</a>
+                                                            </span>
+                                                        </i></p>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input type="checkbox" name="more-info_accordion" id="section3-2" class="accordion__input">
+                                                    <label for="section3-2" class="accordion__label"><b>DESCRIPTION</b></label>
+                                                    <div class="accordion__content">
+                                                        <p>Codiaeum variegatum is an evergreen perennial species that is commonly grown indoors as a houseplant with colorful foliage. It has large leathery leaves that are brightly colored and heavily veined in red, orange, yellow, gold, and green. The flowers are tiny, white, and star-shaped, and they bloom in the summer. This species grows best with some humidity and does well in a bright conservatory, but it should be kept out of direct sunlight - preferring bright, indirect sunlight - and given plenty of warmth.</p>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input type="checkbox" name="more-info_accordion" id="section3-3" class="accordion__input">
+                                                    <label for="section3-3" class="accordion__label"><b>SPECIFIC DETAILS</b></label>
+                                                    <div class="accordion__content">
+                                                        <div class="specific-details">
+                                                            <table>
+                                                                <tr>
+                                                                    <td><b>Leaf Size</b></td>
+                                                                    <td>5-30 cm</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Color</b></td>
+                                                                    <td>Green with yellow dots scattered throughout the leaf blades</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Complexity</b></td>
+                                                                    <td>Simple</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf or Leaflet Lobing</b></td>
+                                                                    <td>Unlobed</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Arrangement</b></td>
+                                                                    <td>Alternate</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Venation</b></td>
+                                                                    <td>Palmate</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Shape</b></td>
+                                                                    <td>Ovate</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Type of Stem</b></td>
+                                                                    <td>Wood stem</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Reproductive Structure</b></td>
+                                                                    <td>Cuttings and Seeds</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Perianth</b></td>
+                                                                    <td>N/A</td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+
+            <div class="layout2">
+                <table>
+                    <tr>
+
+                        <td>
+                            <div class="plant">
+                                <table>
+                                    <tr>
+                                        <td colspan="2"><img src="https://scontent.fcrk4-1.fna.fbcdn.net/v/t1.15752-9/277913392_1904519099938496_2591891224984440547_n.png?_nc_cat=100&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeH0abX7cimwxXY32jjzKMSe6UcTK9X_ncTpRxMr1f-dxMUQ2BVOsx6AXRHJ6ZZQYMPDiScbCJW32Zb2eUPHbyw9&_nc_ohc=zbtzhDwqHNkAX94L-3n&_nc_ht=scontent.fcrk4-1.fna&oh=03_AVK2wulJ4liqdMDKN5DRIg-yVB41heTbMFGG8UOPj2S7Vg&oe=6284FFD6" width="140" class="plant-picture"></td>
+                                        <td class="name-info">
+                                                <b>Common name:</b> Red Button Ginger<br>
+                                                <b>Scientific name:</b> <i>Costus woodsonii</i><br>
+                                                <br>
+                                                <b>Kingdom:</b> Plantae<br>
+                                                <b>Phylum:</b> Tracheophyta<br>
+                                                <b>Class:</b> Magnoliopsida<br>
+                                                <b>Order:</b> Zingiberales<br>
+                                                <b>Family:</b> Costaceae<br>
+                                                <b>Genus:</b> <i>Costus L. – costus</i><br>
+                                                <b>Species:</b> <i>C. woodsonii</i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <div class="accordion">
+                                                <div>
+                                                    <input type="checkbox" name="more-info_accordion" id="section4-1" class="accordion__input">
+                                                    <label for="section4-1" class="accordion__label"><b>TAXONOMIC KEY</b></label>
+                                                    <div class="accordion__content">
+                                                        <p><b>No key indicated on the website</b></p>
+                                                        <p style="font-size: 12px">Source: <i>
+                                                            <span class="taxonomic-key">
+                                                                <a href="http://www.herbarium.unc.edu/Big%20Key%20F.pdf">http://www.herbarium.unc.edu/Big%20Key%20F.pdf</a>
+                                                            </span>
+                                                        </i></p>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input type="checkbox" name="more-info_accordion" id="section4-2" class="accordion__input">
+                                                    <label for="section4-2" class="accordion__label"><b>DESCRIPTION</b></label>
+                                                    <div class="accordion__content">
+                                                        <p>Red Button Ginger, so named because of its lovely flower head that emerges as a luscious red button, is one of the robust spiral gingers in the Costus family, which contains over 100 species. It is distinguished by spirally arranged leaves that wrap around the graceful and succulent stems. The plant can tolerate light frost for short periods of time, but it will stop blooming and will not look good. If the plant is kept above 50° all of the time, it will most likely continue to bloom. The red cones that emerge from the plant are also edible.</p>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input type="checkbox" name="more-info_accordion" id="section4-3" class="accordion__input">
+                                                    <label for="section4-3" class="accordion__label"><b>SPECIFIC DETAILS</b></label>
+                                                    <div class="accordion__content">
+                                                        <div class="specific-details">
+                                                            <table>
+                                                                <tr>
+                                                                    <td><b>Leaf Size</b></td>
+                                                                    <td>4-9 cm</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Color</b></td>
+                                                                    <td>Evergreen</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Complexity</b></td>
+                                                                    <td>Simple</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf or Leaflet Lobing</b></td>
+                                                                    <td>Unlobed</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Arrangement</b></td>
+                                                                    <td>Opposite</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Venation</b></td>
+                                                                    <td>Parallel</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Shape</b></td>
+                                                                    <td>Oblong</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Type of Stem</b></td>
+                                                                    <td>Rhizome</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Reproductive Structure</b></td>
+                                                                    <td>Seeds and underground stems</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Perianth</b></td>
+                                                                    <td>Red</td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="plant">
+                                <table>
+                                    <tr>
+                                        <td colspan="2"><img src="https://scontent.fcrk4-1.fna.fbcdn.net/v/t1.15752-9/277976157_676324760242570_9058735898979408525_n.png?_nc_cat=103&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeGMNnB-C9u4hiX5TowUKd8LSVSeQniv_U5JVJ5CeK_9Tg-zCg2AOO_VFA_qEkMj226D7mpxKuKokhMhSIwkcrO2&_nc_ohc=G_Q1VWIUcmIAX_2JX7i&_nc_ht=scontent.fcrk4-1.fna&oh=03_AVIWMu92-gcV3WOOI92m2uuenvms_wf0LaIwt7mTSfNkkQ&oe=62851AA3" width="140" class="plant-picture"></td>
+                                        <td class="name-info">
+                                            <b>Common name:</b> Snake Plant<br>
+                                            <b>Scientific name:</b> <i>Sansevieria trifasciata // Dracaena trifasciata</i><br>
+                                            <br>
+                                            <b>Kingdom:</b> Plantae<br>
+                                            <b>Phylum:</b> Spermatophyta<br>
+                                            <b>Class:</b> Monocotyledonae<br>
+                                            <b>Order:</b> Asparagales<br>
+                                            <b>Family:</b> Asparagaceae<br>
+                                            <b>Genus:</b> <i>Dracaena</i><br>
+                                            <b>Species:</b> <i>S. trifasciata/D. trifasciata</i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <div class="accordion">
+                                                <div>
+                                                    <input type="checkbox" name="more-info_accordion" id="section5-1" class="accordion__input">
+                                                    <label for="section5-1" class="accordion__label"><b>TAXONOMIC KEY</b></label>
+                                                    <div class="accordion__content">
+                                                        <p><b>Key M1 – monocots with linear, scale, or narrow leaves (or grasses)</b></p>
+                                                        <p>Leaves (actually cladophylls) clustered, (1-) 4-20 (-25) per node; fruit a berry; perianth undifferentiated, of 6 yellow, white, or green tepals; [alien plants of uplands] <b>[<i>Asparagus</i>] ASPARAGACEAE</b></p>
+                                                        <p style="font-size: 12px">Source: <i>
+                                                            <span class="taxonomic-key">
+                                                                <a href="http://www.herbarium.unc.edu/Big%20Key%20F.pdf">http://www.herbarium.unc.edu/Big%20Key%20F.pdf</a>
+                                                            </span>
+                                                        </i></p>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input type="checkbox" name="more-info_accordion" id="section5-2" class="accordion__input">
+                                                    <label for="section5-2" class="accordion__label"><b>DESCRIPTION</b></label>
+                                                    <div class="accordion__content">
+                                                        <p>The snake plant is a member of the Lily Family and is known by a variety of other common names. Mother-in-tongue Law's and Bowstring-hemp are both very "politically correct." Sansevieria's durability makes it an excellent choice for apartment dwellers, who frequently have limited success with houseplants due to lighting issues. Sansevieria is the most tolerant of all decorative plants, surviving even the most adverse growing conditions. Basically, the plant is extremely difficult to kill. The snake plant is a classic yet adaptable houseplant with sword-like foliage. It is ideal for the forgetful gardener and is regarded as a top air-purifying plant for the indoor environment.</p>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input type="checkbox" name="more-info_accordion" id="section5-3" class="accordion__input">
+                                                    <label for="section5-3" class="accordion__label"><b>SPECIFIC DETAILS</b></label>
+                                                    <div class="accordion__content">
+                                                        <div class="specific-details">
+                                                            <table>
+                                                                <tr>
+                                                                    <td><b>Leaf Size</b></td>
+                                                                    <td>60-90 cm</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Color</b></td>
+                                                                    <td>Evergreen with light green margins</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Complexity</b></td>
+                                                                    <td>Simple</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf or Leaflet Lobing</b></td>
+                                                                    <td>Unlobed</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Arrangement</b></td>
+                                                                    <td>Basal</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Venation</b></td>
+                                                                    <td>Parallel</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Leaf Shape</b></td>
+                                                                    <td>Sword-shaped</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Type of Stem</b></td>
+                                                                    <td>Stemless</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Reproductive Structure</b></td>
+                                                                    <td>Cuttings and rhizomes</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><b>Perianth</b></td>
+                                                                    <td>Greenish-white</td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+
+        <br>
+
+        <p class="center under_line title"><b>TABLE OF COMPARISON</b></p>
+
+            <div class="comparison">
+                <table>
+                    <tr>
+                        <td><b>Characteristics</b></td>
+                        <td><b><i>Pteridophyte</i><br>(Fern)</b></td>
+                        <td><b><i>Coleus scutellarioides</i><br>(Coleus)</b></td>
+                        <td><b><i>Codiaeum variegatum</i><br>(Garden Croton)</b></td>
+                        <td><b><i>Costus woodsonii</i><br>(Red Button Ginger)</b></td>
+                        <td><b><i>Sansevieria trifasciata // Dracaena trifasciata</i><br>(Snake Plant)</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>Leaf Size</b></td>
+                        <td>2-6 cm</td>
+                        <td>2-15 cm</td>
+                        <td>5-30 cm</td>
+                        <td>4-9 cm</td>
+                        <td>60-90 cm</td>
+                    </tr>
+                    <tr>
+                        <td><b>Leaf Complexity</b></td>
+                        <td>Complex</td>
+                        <td>Simple</td>
+                        <td>Simple</td>
+                        <td>Simple</td>
+                        <td>Simple</td>
+                    </tr>
+                    <tr>
+                        <td><b>Leaf or Leaflet Lobing</b></td>
+                        <td>Unlobed</td>
+                        <td>Unlobed</td>
+                        <td>Unlobed</td>
+                        <td>Unlobed</td>
+                        <td>Unlobed</td>
+                    </tr>
+                    <tr>
+                        <td><b>Leaf Arrangement</b></td>
+                        <td>Opposite</td>
+                        <td>Opposite</td>
+                        <td>Alternate</td>
+                        <td>Opposite</td>
+                        <td>Basal</td>
+                    </tr>
+                    <tr>
+                        <td><b>Leaf Venation</b></td>
+                        <td>Pinnate</td>
+                        <td>Pinnate</td>
+                        <td>Palmate</td>
+                        <td>Parallel</td>
+                        <td>Parallel</td>
+                    </tr>
+                    <tr>
+                        <td><b>Leaf Shape</b></td>
+                        <td>Fan-shaped</td>
+                        <td>Ovate</td>
+                        <td>Ovate</td>
+                        <td>Cblong</td>
+                        <td>Sqord-shape</td>
+                    </tr>
+                    <tr>
+                        <td><b>Type of Stem</b></td>
+                        <td>Rhizome</td>
+                        <td>Square stem</td>
+                        <td>Wood stem</td>
+                        <td>Rhizome</td>
+                        <td>Stemless</td>
+                    </tr>
+                    <tr>
+                        <td><b>Reproductive Structure</b></td>
+                        <td>Spores</td>
+                        <td>Cuttings and seeds</td>
+                        <td>Cuttings and seeds</td>
+                        <td>Seeds and underground stems</td>
+                        <td>Cuttings and rhizomes</td>
+                    </tr>
+                    <tr>
+                        <td><b>Perianth</b></td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>Red</td>
+                        <td>Greenish-white</td>
+                    </tr>
+                </table>
+            </div>
+
+        <br>
+
+        <p class="center under_line title"><b>CLADOGRAM</b></p>
+
+            <div class="center cladogram">
+                <img src="https://scontent.fmnl25-3.fna.fbcdn.net/v/t1.15752-9/278114236_1239822673216596_7699984880803359125_n.png?_nc_cat=108&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeFQ59sYnDJte53W_J0_E4RFT6pab_TOsz5Pqlpv9M6zPo6R7Jf_0CecsH8wEQ1kljyWWJOGhbxRLVkYxGpVRGzQ&_nc_ohc=pwkHQDTxMlIAX8o9ewr&_nc_ht=scontent.fmnl25-3.fna&oh=03_AVIuXmkHH1GjDmwxFBhEXemRUCiV3gWjQ7bcIN9JCZDU7w&oe=628D887C" width="40%">
+            </div>
+
+        <br><br>
+
+	</body>
+</html>

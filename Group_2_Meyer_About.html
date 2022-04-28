@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Beauty and the Beads</title>
+		<link rel="icon" type="image/x-icon" href="https://drive.google.com/uc?export=view&id=1qMRmKd7KVnXxcWCh3Z24gQcqNUAzXQL9">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+        <style>
+        	body {
+        		margin: 0;
+                        background-image: url(https://drive.google.com/uc?export=view&id=1VchKpZi4Hn_lF4jtFAzsWtRCCMKSa_O-);
+                        background-repeat: no-repeat; 
+                        background-attachment: fixed; 
+                        background-size: cover;
+                        background-color: #273573;
+        		font-family: Cinzel;
+        		font-weight:400;
+        	}
+
+        	.container {
+        		width: 80%
+        		margin: 0 auto;
+        		padding-left: 30px;
+        	}
+
+        	header {
+        		background-color: #273573;
+        	}
+
+        	header::after {
+        		content: '';
+        		display: table;
+        		clear: both;
+        	}
+
+        	.logo {
+        		float: left;
+        		padding: 10px 0;
+        	}
+
+        	nav {
+        		float: right;
+        	}
+
+        	nav ul {
+        		margin: 0;
+        		padding: 0;
+        		list-style: none;
+        	}
+
+        	nav li {
+        		display: inline-block;
+        		margin-left: 25px;
+        		margin-right: 25px;
+        		padding-top: 30px;
+                font-family: Cinzel;
+
+        		position: relative;
+        	}
+
+        	nav a {
+        		color: white;
+        		text-decoration: none;
+        		text-transform: uppercase;
+        		font-size: 17px;
+        	}
+
+        	nav.a hover {
+        		color: black;
+        	}
+
+        	nav a::before {
+        		content: '';
+        		display: block;
+        		height: 2px;
+        		width: 100%;
+        		background-color: #F4A928;
+
+        		position: absolute;
+        		top: 60px;
+        		width: 0%;
+
+        		transition: all ease-in-out 250ms
+        	}
+
+        	nav a:hover::before {
+        		width: 100%;
+        	}
+
+            .tabs {
+                display: flex;
+                flex-wrap: wrap;
+                width: 65%;
+                padding: 50px;
+            }
+
+            .tabs__label {
+                padding: 10px 50px;
+                cursor: pointer;
+                font-family: Cinzel;
+                font-size: 18px;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.2);
+                border-radius: 25px 25px 0 0;
+            }
+
+            .tabs__label:hover {
+                color: black;
+                background-color: rgba(250, 250, 250, 0.9);
+            }
+
+            .tabs__radio {
+                display: none;
+            }
+
+            .tabs__content {
+                order: 1;
+                width: 100%;
+                order-bottom: 10px solid green;
+                line-height: 1.5;
+                font-family: Josefin Sans;
+                font-size: 18px;
+                line-height: 25px;
+                display: none;
+                text-align: justify;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.1);
+                padding: 10px 30px;
+                text-indent: 50px;
+                border-radius: 0 25px 25px 25px;
+            }
+
+            .tabs__radio:checked + .tabs__label {
+                font-weight: bold;
+                color: #F4A928;
+                border-bottom: 2px solid #FFDF3B;
+            }
+
+            .tabs__radio:checked + .tabs__label + .tabs__content {
+                display: initial;
+            }
+
+            .center-image {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 5px;
+            }
+        </style>
+	</head>
+
+	<body>
+
+		<header>
+			<div class="container">
+				<img src="https://drive.google.com/uc?export=view&id=1CBzY6RCVXu5rS9LAtHAD7LcA1dyPyHbV" alt="logo" class="logo" height="60">
+                <nav>
+                    <ul>
+                        <li><a href="Group_2_Meyer_Home.html">HOME</a></li>
+                        <li><a href="Group_2_Meyer_About.html">ABOUT</a></li>
+                        <li><a href="Group_2_Meyer_Shop.html">SHOP</a></li>
+                        <li><a href="Group_2_Meyer_Entrep.html">Entrepreneurship</a></li>
+                        <li><a href="Group_2_Meyer_EAPP.html">EAPP</a></li>
+                        <li><a href="Group_2_Meyer_Biology.html">Biology</a></li>
+                        <li><a href="Group_2_Meyer_CPAR.html">CPAR</a></li>
+                    </ul>
+                </nav>
+			</div>
+		</header>
+
+        <div class="tabs">
+            <input type="radio" class="tabs__radio" name="about" id="tab1" checked>
+            <label for="tab1" class="tabs__label">COMPANY</label>
+            <div class="tabs__content">
+                 <p>The management team of Beauty and the Beads comprises eight (8) co-owning senior year students from 12-Meyer of Pasig City Science High School. The team is responsible for the creation, advertisement, and overall management of the products, employing a partnership legal structure in which management duties, expenses, liabilities, and profits are equally divided and shared between the students. The business will be home-based and advertised online using social media platforms like Facebook as consulted by their Entrepreneurship teacher, Mrs. Beverly Rose Ramos. The purchased product will be delivered accordingly after transacting with the customer. Suppliers, delivery and logistics personnel, and other key figures are also involved in the smooth-sailing operation of Beauty and the Beads.</p>
+                 <img src="https://drive.google.com/uc?export=view&id=1jmMbi15ngNfId4egrgB2_lG5_qIG7dP6" width="100%" class="center-image">
+            </div>
+            <input type="radio" class="tabs__radio" name="about" id="tab2">
+            <label for="tab2" class="tabs__label">HISTORY</label>
+            <div class="tabs__content">
+                <p>Beauty and the beads began to arise from small ideas to one big picture, building confidence for the people and the company through the shared process of adding creativity and uniqueness of ideas from everyone included. In the earliest days of this journey, several students from Grade 12 Meyer gathered altogether to find an idea. These following students are known to be creative, hardworking, and witty people that collectively contributed to one another their ideas about a potential business to run. After days of searching and canvassing, they’ve arrived at the idea of selling beaded products. The initial motivation of this business was to create products made out of beads such as wallets, bags, accessories and other more items. Moving forward, suggestions of names were laid out and finally they arrived with a distinctive quick-witted business name inspired by the famous Disney movie, we now know this business as <b>Beauty and the Beads</b>, <em>Bead our guest!</em></p>
+                <p>At this moment, the business aims to produce accessories with beads of a variety of different colors and sizes. The packaging is inspired by the theme of the movie, with gems and flowers. Overall, Beauty of the Beads started from expressive witted ideas, with great potential to further continue the progress as time will continuously pass to a possible establishment of the business itself.</p>
+            </div>
+        </div>
+
+	</body>
+</html>
